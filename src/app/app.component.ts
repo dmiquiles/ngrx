@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngrx';
+  itens?: any[] = [
+    { name: 'Banana', amount: 10},
+    { name: 'Grape', amount: 2},
+  ]
 }
