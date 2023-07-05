@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { loadShoppingList } from 'src/app/store/shopping-list.actions';
+import { IShoppingListItem } from 'src/app/store/shopping-list.state';
 
 @Component({
   selector: 'app-shopping-list',
@@ -7,11 +10,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ShoppingListComponent implements OnInit {
 
-  @Input() itens?: any[];
+  @Input() itens?: IShoppingListItem[];
 
-  constructor() { }
+  constructor(
+    private store: Store
+  ) { }
 
   ngOnInit(): void {
+    this.store.dispatch(loadShoppingList())
   }
 
 }

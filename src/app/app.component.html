@@ -1,3 +1,5 @@
 <app-add-item></app-add-item>
 
-<app-shopping-list [itens]="itens"></app-shopping-list>
+<div *ngIf="itens$ | async as itens">
+  <app-shopping-list [itens]="itens"></app-shopping-list>
+</div>
